@@ -1,6 +1,12 @@
 #Popgen HW 1
-
-
+#1B
+#The genotype frequences can be represented as by the following, where the allele frequencies of S, I and G are represented by fs, fi, and fg, repectively. 
+#GSS = fs^2
+#GFF =ff^2
+#GII = fi^2
+#GSF = 2fs*ff
+#GSI = 2fs*fi
+#GFI = 2ff*fi
 #1B 
 #tot represents the total population number
 tot <- 141 + 111 + 15 + 28 + 32 + 5
@@ -23,9 +29,48 @@ fi
 #fs, fi, and ff need to add to 1
 fs + fi + ff
 #and they do :) 
-#ge is all the expected genotypes
-ge <- c(123.5,29.88,2.69,121.51,36.45,17.93)
+#And now to calculate genotype frequencies. 
+GSS = fs^2
+GSS
+#GSS is 0.3775584
+GFF =ff^2
+GFF
+#GFF is 0.08981937
+GII = fi^2
+GII
+#GII is 0.007369085
+GSF = 2*fs*ff
+GSF
+#GSF is 0.3683045
+GSI = 2*fs*fi
+GSI
+#GSI is 0.1054943
+GFI = 2*ff*fi
+GFI
+#GFI is 0.05145431
+#These genotype frequences should add to 1
+GSS + GFF + GII + GFI +GSF +GSI
+#AND THEY DO!!
+#ge is the expected genotype totals of all individuals in the population
+ge <- tot*c(GSS,GFF,GII,GSF,GSI,GFI)
 ge
+#egenotypenames is an object I'm going to use just to symbolically represent each expected genotype.
+egenotypenames <- c("SS","FF","II","SF","SI","FI")
+egenotypenames
+egnames <- as.list(egenotypenames)
+#Now I am going to represent the total amount of individuals per genotype with the following array: expectedgenotypes
+expectedgenotypes <- data.frame(ge, row.names = egnames)
+expectedgenotypes
+#  Expected Genotypes
+#SS 125.349398
+#FF  29.820030
+#II   2.446536
+#SF 122.277108
+#SI  35.024096
+#FI  17.082831
+
+
+
 #go is the observed genotypes
 go <- c(141,28,5,111,15,32)
 go
