@@ -124,4 +124,4 @@ genotype_frequencies
 #0.5        0.500         0.500
 #0.75       0.625         0.375
 #1          1.000         0.000
-
+#Heterozygote frequencies are maximized when p (and also q) is 0.5. 
