@@ -127,17 +127,19 @@ genotype_frequencies
 #Heterozygote frequencies are maximized when p (and also q) is 0.5. 
 
 #Question 3 
-#Ok Nic are you trying to trick us? If we are looking for O- Individuals, meaning they are homozygous at the O locus, recombination doesn't matter because homozygotes stay homozygotes. 
-#Therefore, the expected frequency of O individuals is the expected genotype frequency for O homozygotes, independent of the Rh locus. 
-pO <- 0.67 
-GOO <- pO^2
-GOO
-#The expected frequency of O individuals is 0.4489
-
+#D = gOD-pOpD where D is the non-d allele. 
+#gOD = 0.1 +(0.67)(0.4)
+gOD <- 0.1 +0.67*0.4
+gOD
+#gOD = 0.368. O- individuals are homozygotes for O and the non-d allele (D). And gOD is 0.368 so:
+Omindividuals <- gOD^2
+Omindividuals
+#There is a frequency of 0.135424 O- individuals in the population. 
 #Question 4A
-#mdmd = gmd^2, mDmd = 2*(gmD)*(gmd ),
+#mdmd = gmd^2, 
+#mDmd = 2*(gmD)*(gmd),
 #Mdmd = 2*(gMd)*(gmd), 
-#MDmd (without recombination) = 2*(MD)*(md). 
+#MmDd (without recombination) = (1/2)*2*(MD)*(md)(1-r) + (1/2)*(Md)*(mD)*r
 
 #gmd^2 = 58 , gmd = sqrt(58)
 gmd <- sqrt(58)
@@ -148,4 +150,13 @@ gmd
 gMd <- 7/(2*gmd)
 gMd
 #gMd = 0.4595725
-
+#12 = 2*(gmD)*(gmd), gmD = 12/(2*gmd)
+gmD <- 12/(2*gmd)
+gmD
+#gmD = 0.7878386 
+gamfreqs <- c(gmd, gMd, gmD, "unknown")
+gamnames <- list("gmd","gMd","gmD", "gMD")
+gametes <- data.frame(gamfreqs, row.names = gamnames)
+gametes
+gMD <- 1 - (gmd+gMd+gmD)
+gMD
