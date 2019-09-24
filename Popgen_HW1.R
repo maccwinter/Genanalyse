@@ -114,9 +114,14 @@ heteq0.25 <- hete(0.75,0.25)
 heteq0 <- hete(1,0)
 heterozygotes <- c(heteq0,heteq0.25,heteq0.5,heteq0.75,heteq1)
 heterozygotes
-
-
-
-
-
+pfreq <- list("0","0.25","0.5","0.75","1")
+pfreq
+genotype_frequencies <- data.frame(homozygotes, heterozygotes, row.names = pfreq)
+genotype_frequencies
+#p       homozygotes heterozygotes
+#0          1.000         0.000
+#0.25       0.625         0.375
+#0.5        0.500         0.500
+#0.75       0.625         0.375
+#1          1.000         0.000
 
