@@ -90,3 +90,33 @@ k
 #This chi squared value at a k of 3 statistically deviates from Hardy Weinberg. 
 
 
+
+
+#Question 2 
+#homo represents the frequency of homozygotes (based on the Hardy-Weinberg model) and hete represents the heterozygote frequency
+homo<- function(p,q){(p^2)+(q^2)}
+hete <- function(p,q){2*p*q}
+homop0 <- homo(0,1)
+homop0
+homop0.25 <- homo(0.25,0.75)
+homop0.25
+homop0.5 <- homo(0.5,0.5)
+homop0.5
+homop0.75 <- homo(0.75,0.25)
+homop0.75
+homop1 <- homo(1,0)
+homozygotes <-c(homop0,homop0.25,homop0.5,homop0.75,homop1)
+homozygotes
+heteq1 <- hete(0,1)
+heteq0.75 <- hete(0.25,0.75)
+heteq0.5 <- hete(0.5,0.5)
+heteq0.25 <- hete(0.75,0.25)
+heteq0 <- hete(1,0)
+heterozygotes <- c(heteq0,heteq0.25,heteq0.5,heteq0.75,heteq1)
+heterozygotes
+
+
+
+
+
+
