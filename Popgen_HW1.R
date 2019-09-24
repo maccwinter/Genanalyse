@@ -134,9 +134,18 @@ GOO <- pO^2
 GOO
 #The expected frequency of O individuals is 0.4489
 
-#Question 4 
+#Question 4A
+#mdmd = gmd^2, mDmd = 2*(gmD)*(gmd ),
+#Mdmd = 2*(gMd)*(gmd), 
+#MDmd (without recombination) = 2*(MD)*(md). 
 
-
-
-
+#gmd^2 = 58 , gmd = sqrt(58)
+gmd <- sqrt(58)
+gmd
+#gmd = 7.615773
+#2*(gMd)*(gmd) = 7
+#7/(2*gmd) = gMd
+gMd <- 7/(2*gmd)
+gMd
+#gMd = 0.4595725
 
