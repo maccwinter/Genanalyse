@@ -83,8 +83,10 @@ prechi
 chi2 <- sum(prechi)
 chi2
 #The chi squared value is 30.24456
-
-
-
+#There are 2 non-independent variables and 6 possible genotypes. So k, the degrees of freedome is:
+k <- 6-1-2
+k
+#There are 3 degrees of freedom. 
+#This chi squared value at a k of 3 statistically deviates from Hardy Weinberg. 
 
 
