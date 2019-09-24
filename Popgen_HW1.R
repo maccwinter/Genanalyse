@@ -125,3 +125,18 @@ genotype_frequencies
 #0.75       0.625         0.375
 #1          1.000         0.000
 #Heterozygote frequencies are maximized when p (and also q) is 0.5. 
+
+#Question 3 
+#Ok Nic are you trying to trick us? If we are looking for O- Individuals, meaning they are homozygous at the O locus, recombination doesn't matter because homozygotes stay homozygotes. 
+#Therefore, the expected frequency of O individuals is the expected genotype frequency for O homozygotes, independent of the Rh locus. 
+pO <- 0.67 
+GOO <- pO^2
+GOO
+#The expected frequency of O individuals is 0.4489
+
+#Question 4 
+
+
+
+
+
