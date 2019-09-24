@@ -68,9 +68,6 @@ expectedgenotypes
 #SF 122.277108
 #SI  35.024096
 #FI  17.082831
-
-
-
 #go is the observed genotypes
 go <- c(141,28,5,111,15,32)
 go
@@ -85,7 +82,8 @@ prechi
 #chi2 is the sum of all the values in prechi (aka the chi squared value)
 chi2 <- sum(prechi)
 chi2
-#The chi squared value is 29.155
+#The chi squared value is 30.24456
+
 
 
 
