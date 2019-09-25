@@ -157,6 +157,36 @@ pi
 #5B is written out on the paper. I expect pi to increase in subsequent generations after inbreeding. 
 #pi should increase faster for an inbreeding population, while it decreases for an outbreeding population. 
 #Problem 6 
+# f = 1 - (observed het/expected het)
+# expected heterozygosity = 2 pq 
+q <- function(p){1-p}
+#a 
+q(.1)
+#q = 0.9 
+expectedhet<- function(p){2*p*q(p)}
+expectedheta <- expectedhet(0.1)
+#expected heterozygosity for a is 0.18.
+#observed heterozygosity: observedhet = expectedhet(1-f).
+observedheta <- expectedheta*(1-0.5)
+observedheta
+#The observed heterozygosity for a is 0.09
+#Observed homozygosity is 1 - observed heterozygosity 
+observedhomoa <- 1 - observedheta
+observedhomoa
+#Observed homozygosity for a is 0.91 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
