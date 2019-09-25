@@ -156,7 +156,7 @@ pi
 #pi = 2.2
 #5B is written out on the paper. I expect pi to increase in subsequent generations after inbreeding. 
 #pi should increase faster for an inbreeding population, while it decreases for an outbreeding population. 
-
+#Problem 6 
 
 
 
