@@ -136,55 +136,20 @@ Omindividuals <- gOD^2
 Omindividuals
 #There is a frequency of 0.135424 O- individuals in the population. 
 #Question 4A
-#total individuals will be represented with itot
-itot <- 63+7+12+58
-itot
-#There are 140 individuals. gtot it the total number of gametes that went into making this population. 
-gtot <- 2*itot
-gtot
-#There are 280 gametes. 
-#mdmd = gmd^2, 
-#mDmd = 2*(gmD)*(gmd),
-#Mdmd = 2*(gMd)*(gmd), 
-#MmDd (without recombination) = (1/2)*2*(MD)*(md)(1-r) + (1/2)*(Md)*(mD)*r
-
-#gmd^2 = 58 , gmd = sqrt(58)
-gmd <- sqrt(58/gtot)
-gmd
-#gmd = 7.615773
-#2*(gMd)*(gmd) = 7
-#7/(2*gmd) = gMd
-gMd <- (7/gtot)/(2*gmd)
-gMd
-#gMd = 0.4595725
-#12 = 2*(gmD)*(gmd), gmD = 12/(2*gmd)
-gmD <- (12/gtot)/(2*gmd)
-gmD
-#gmD = 0.7878386 
-gamfreqs <- c(gmd, gMd, gmD, "unknown")
-gamnames <- list("gmd","gMd","gmD", "gMD")
-gametes <- data.frame(gamfreqs, row.names = gamnames)
-gametes
-gMD <- 1 - (gmd+gMd+gmD)
-gMD
-#gMD = 0.4703234
-#If gMD is 0.4703234, then MmDd expected (MmDdexp) should be 2*gMD*gmd. 
-#MmDdobs is the observed frequency of MmDd 
-MmDdobs <- 63/itot
-MmDdobs
-#MmDdobs is 0.45 
-MmDdexp <- 2*gMD*gmd
-MmDdexp
-#The result is 0.4281161. 
-#MDmdobs = gMD*gmd*(1-r) + gMd*gmD*r. I did some algebra ... 
-r <- (MmDdobs - MmDdexp)/(gMd*gmD - MmDdexp)
-r
-# r is 0.05127152
+# RF = (sum of recombinant progeny/total progeny)*100
+RF <- ((7+12)/(63+7+12+58))*100
+RF
+#RF = 13.57143
+#r = 0.13
+r<-0.13
 #4B 
 #Dt = Do((1-r)^t)
 #Algebra --- t = ln(Dt/Do)/ln(1-r)
 #t = ln(0.05/0.23)/ln(1-r)
-
+t = log(0.05/0.23)/log(1-r)
+t
+#After 10.95816 generations of random mating, so 11 generations, D degrades to 0.05.
+#Problem 5A
 
 
 
