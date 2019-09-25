@@ -160,33 +160,46 @@ pi
 # f = 1 - (observed het/expected het)
 # expected heterozygosity = 2 pq 
 q <- function(p){1-p}
-#a 
-q(.1)
-#q = 0.9 
 expectedhet<- function(p){2*p*q(p)}
-expectedheta <- expectedhet(0.1)
-#expected heterozygosity for a is 0.18.
-#observed heterozygosity: observedhet = expectedhet(1-f).
-observedheta <- expectedheta*(1-0.5)
-observedheta
-#The observed heterozygosity for a is 0.09
-#Observed homozygosity is 1 - observed heterozygosity 
-observedhomoa <- 1 - observedheta
-observedhomoa
-#Observed homozygosity for a is 0.91 
-
-
-
-
-
-
-
-
-
-
-
-
-
+expectedhet(0.1)
+#observed heterozygosity (GAa): observedhet = expectedhet(1-f).
+GAa <- function(p,f){expectedhet(p)*(1-f)}
+GAa(0.1,0.5)
+#There are two types of homozygotes GAA and Gaa.
+#p = GAA + 0.5*GAa
+#q = GAa + 0.5*GAa
+#GAA = p - 0.5*GAa
+#Gaa = q - 0.5*GAa
+GAA <- function(p,f){p -0.5*GAa(p,f)}
+Gaa <- function(p,f){q(p)-0.5*GAa(p,f)}
+gametestot <- function(p,f){GAA(p,f)+GAa(p,f)+Gaa(p,f)}
+#6a 
+GAa(0.1,0.5)
+#GAa = 0.09 
+GAA(0.1,0.5)
+#GAA = 0.055
+Gaa(0.1,0.5)
+#Gaa = 0.855
+gametestot(0.1,0.5)
+#They add to 1! 
+#6b 
+GAa(0.3,0.02)
+#GAa = 0.4116
+GAA(0.3,0.02)
+#GAA = 0.0942
+Gaa(0.3,0.02)
+#Gaa = 0.4942
+gametestot(0.3,0.02)
+#Adds to 1 
+#6c 
+GAa(0.5,-0.3)
+#GAa = 0.65
+GAA(0.5,-0.3)
+#GAA = 0.175
+Gaa(0.5,-0.3)
+#Gaa = 0.175
+gametestot(0.5,-0.3)
+#Adds to 1
 
 
 
